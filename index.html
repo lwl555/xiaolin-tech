@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>小林科技 · 自动化 / 全栈 / App 定制</title>
+<meta name="description" content="小林科技，独立开发者接单：电脑与手机自动化脚本、前后端与数据库、后台管理系统、App 搭建。先跑通再交付，源码与文档一起给你。微信扫码直接聊。">
+<meta name="author" content="小林科技">
+<meta name="theme-color" content="#05060a">
+<link rel="canonical" href="https://lwl555.github.io/xiaolin-tech/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="小林科技">
+<meta property="og:url" content="https://lwl555.github.io/xiaolin-tech/">
+<meta property="og:title" content="小林科技 · 把重复的活交给程序">
+<meta property="og:description" content="自动化脚本 / 前后端与数据库 / 后台管理系统 / App 搭建。独立开发者，直接对接，源码交付。">
+<meta property="og:image" content="https://lwl555.github.io/xiaolin-tech/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/main.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"小林科技","alternateName":"XIAOLIN TECH","url":"https://lwl555.github.io/xiaolin-tech/","image":"https://lwl555.github.io/xiaolin-tech/assets/img/og.jpg","description":"独立开发者接单：电脑与手机自动化脚本、前后端与数据库、后台管理系统、App 搭建。","areaServed":"CN","priceRange":"按需求评估","knowsAbout":["自动化脚本","数据处理","后台管理系统","App 开发","数据库设计","接口对接"]}
+</script>
+<script>try{var t=localStorage.getItem('xl-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}document.documentElement.classList.add('js');setTimeout(function(){if(!window.__xlReady){document.documentElement.classList.remove('js');}},3500);</script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="scroll-progress" aria-hidden="true"><span id="scrollBar"></span></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="小林科技 首页">
+      <span class="brand-mark">林</span>
+      <span class="brand-text">小林科技<em>XIAOLIN TECH</em></span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="主导航">
+      <a href="#services">能力</a>
+      <a href="#lab">演练场</a>
+      <a href="#work">案例</a>
+      <a href="#process">流程</a>
+      <a href="#faq">问题</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="切换明暗主题" title="切换明暗主题">
+        <svg class="ico-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <svg class="ico-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <button class="btn btn-primary btn-sm" type="button" data-qr="wechat">
+        <span>聊聊需求</span>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mm-inner">
+    <a href="#services"><span>01</span>能力</a>
+    <a href="#lab"><span>02</span>演练场</a>
+    <a href="#work"><span>03</span>案例</a>
+    <a href="#process"><span>04</span>流程</a>
+    <a href="#faq"><span>05</span>问题</a>
+    <a href="#contact"><span>06</span>联系</a>
+    <button class="btn btn-primary" type="button" data-qr="wechat">微信扫码，直接聊</button>
+  </div>
+</div>
+
+<main id="main">
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="aurora" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  </div>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow reveal"><span class="dot"></span>独立开发者 · 接单中 · 广东河源</p>
+      <h1 class="reveal" style="--d:.06s">把重复的活，<br><span class="grad">交给程序</span>。</h1>
+      <p class="lead reveal" style="--d:.12s">自动化脚本、前后端与数据库、后台管理系统、App 搭建。<br>
+        你用业务语言说需求，我把它变成能跑起来、能维护、能交接的东西。</p>
+      <div class="hero-cta reveal" style="--d:.18s">
+        <button class="btn btn-primary btn-lg magnetic" type="button" data-qr="wechat">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.2 4C5.2 4 2 6.6 2 9.8c0 1.8 1 3.4 2.6 4.5l-.6 2 2.2-1.1c.7.2 1.5.3 2.3.3h.6a5.6 5.6 0 0 1-.2-1.5c0-3.2 3.1-5.8 6.9-5.8h.5C16.7 5.6 13.3 4 9.2 4Zm-2.6 3.3a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8Zm5.2 0a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8Z"/><path d="M22 14.1c0-2.7-2.7-4.9-6-4.9s-6 2.2-6 4.9 2.7 4.9 6 4.9c.7 0 1.4-.1 2-.3l1.9.9-.5-1.7c1.6-.9 2.6-2.3 2.6-3.8Zm-8-1.3a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6Zm4 0a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6Z"/></svg>
+          微信扫码，直接聊
+        </button>
+        <a class="btn btn-ghost btn-lg" href="#services">看看能做什么 <span class="arr">↓</span></a>
+      </div>
+      <dl class="hero-stats reveal" style="--d:.24s">
+        <div><dt>交付形态</dt><dd>4 类</dd><small>脚本 / 网站 / 后台 / App</small></div>
+        <div><dt>首次回复</dt><dd>24h</dd><small>工作日内，看到就回</small></div>
+        <div><dt>交付内容</dt><dd>源码</dd><small>带注释，附使用说明</small></div>
+      </dl>
+    </div>
+
+    <div class="hero-visual reveal" style="--d:.2s">
+      <div class="terminal-card" id="heroTerminal">
+        <div class="tc-head">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="tc-title">xiaolin@studio — automation</span>
+          <span class="tc-live"><i></i>RUNNING</span>
+        </div>
+        <pre class="tc-body" id="tcBody" aria-label="自动化运行示例"></pre>
+        <div class="tc-foot">
+          <span class="tc-prompt">$</span>
+          <span class="tc-caret" id="tcCaret"></span>
+          <span class="tc-hint">示例日志 · 真实场景按你的流程定制</span>
+        </div>
+      </div>
+      <div class="float-chip c1"><i class="ok"></i>今日任务 12/12 完成</div>
+      <div class="float-chip c2"><i class="clock"></i>人工 2.4h → 38.6s</div>
+      <div class="float-chip c3"><i class="lock"></i>数据只在你自己的账号里</div>
+      <div class="ring" aria-hidden="true"></div>
+    </div>
+  </div>
+  <div class="wrap hero-foot reveal" style="--d:.3s">
+    <span class="scroll-hint"><i></i>往下看，有能点的东西</span>
+    <div class="hero-tags">
+      <span>Python</span><span>Node.js</span><span>Vue / React</span><span>Supabase</span><span>Kotlin / Compose</span><span>Android 自动化</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>自动化脚本</span><b>✦</b><span>数据清洗</span><b>✦</b><span>后台管理系统</span><b>✦</b><span>App 搭建</span><b>✦</b><span>接口对接</span><b>✦</b><span>网页设计</span><b>✦</b><span>数据库设计</span><b>✦</b><span>批量处理</span><b>✦</b>
+    <span>自动化脚本</span><b>✦</b><span>数据清洗</span><b>✦</b><span>后台管理系统</span><b>✦</b><span>App 搭建</span><b>✦</b><span>接口对接</span><b>✦</b><span>网页设计</span><b>✦</b><span>数据库设计</span><b>✦</b><span>批量处理</span><b>✦</b>
+  </div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow reveal"><span class="idx">01</span>能做什么</p>
+      <h2 class="reveal" style="--d:.05s">四件事，<span class="grad-2">从想法到能用</span>。</h2>
+      <p class="sec-lead reveal" style="--d:.1s">不堆概念，只解决具体问题。下面每一类都可以单独做，也可以拼成一套完整系统。</p>
+    </header>
+
+    <div class="service-grid">
+      <article class="svc-card reveal" data-tilt>
+        <span class="svc-idx">01</span>
+        <div class="svc-ico">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="m7.5 10 2 2-2 2M12.5 14h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>自动化脚本</h3>
+        <p>把每天重复点一百次的操作，压成一次点击。电脑端、手机端都行，跑在后台，失败会重试，出错会告诉你。</p>
+        <ul class="svc-tags">
+          <li>电脑端 RPA</li><li>手机自动化</li><li>定时任务</li><li>批量处理</li>
+        </ul>
+        <span class="svc-arrow" aria-hidden="true">↗</span>
+      </article>
+
+      <article class="svc-card reveal" data-tilt style="--d:.06s">
+        <span class="svc-idx">02</span>
+        <div class="svc-ico">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3" stroke="currentColor" stroke-width="1.5"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" stroke="currentColor" stroke-width="1.5"/></svg>
+        </div>
+        <h3>前后端 &amp; 数据库</h3>
+        <p>从页面到接口到表结构，一套打通。数据库怎么设计、接口怎么拆、权限怎么控，一起想清楚再动手。</p>
+        <ul class="svc-tags">
+          <li>响应式前端</li><li>API 设计</li><li>表结构</li><li>第三方对接</li>
+        </ul>
+        <span class="svc-arrow" aria-hidden="true">↗</span>
+      </article>
+
+      <article class="svc-card reveal" data-tilt style="--d:.12s">
+        <span class="svc-idx">03</span>
+        <div class="svc-ico">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="1.5"/><path d="M12.5 13.5h5M12.5 17h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3>后台管理系统</h3>
+        <p>登录、角色、增删改查、导入导出、看板报表。给它配一个好上手的界面，员工培训十分钟就能用。</p>
+        <ul class="svc-tags">
+          <li>权限角色</li><li>数据看板</li><li>Excel 导入导出</li><li>操作日志</li>
+        </ul>
+        <span class="svc-arrow" aria-hidden="true">↗</span>
+      </article>
+
+      <article class="svc-card reveal" data-tilt style="--d:.18s">
+        <span class="svc-idx">04</span>
+        <div class="svc-ico">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M10 5.5h4M10.5 18.5h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3>App 搭建</h3>
+        <p>安卓 / iOS 都能做。先把核心流程跑通，再补细节；推送、提醒、离线缓存这些容易踩坑的地方我盯着。</p>
+        <ul class="svc-tags">
+          <li>安卓 App</li><li>跨平台</li><li>推送提醒</li><li>上架支持</li>
+        </ul>
+        <span class="svc-arrow" aria-hidden="true">↗</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LAB / COMPILER ============ -->
+<section class="section section-alt" id="lab">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow reveal"><span class="idx">02</span>互动 · 需求编译器</p>
+      <h2 class="reveal" style="--d:.05s">选三下，<span class="grad">先看个方案</span>。</h2>
+      <p class="sec-lead reveal" style="--d:.1s">不用想清楚所有细节。选个大概，看看这件事大概长什么样、要准备什么。不满意可以随时推翻，反正是聊出来的。</p>
+    </header>
+
+    <div class="compiler reveal" id="compiler">
+      <div class="cp-controls">
+        <fieldset class="cp-group">
+          <legend><span>01</span>跑在哪</legend>
+          <div class="pills" role="radiogroup" aria-label="运行平台">
+            <button class="pill is-on" data-field="platform" data-value="pc" role="radio" aria-checked="true">电脑</button>
+            <button class="pill" data-field="platform" data-value="phone" role="radio" aria-checked="false">手机</button>
+            <button class="pill" data-field="platform" data-value="web" role="radio" aria-checked="false">网页</button>
+            <button class="pill" data-field="platform" data-value="app" role="radio" aria-checked="false">App</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="cp-group">
+          <legend><span>02</span>想解决什么</legend>
+          <div class="pills" role="radiogroup" aria-label="需求类型">
+            <button class="pill is-on" data-field="goal" data-value="auto" role="radio" aria-checked="true">自动化</button>
+            <button class="pill" data-field="goal" data-value="data" role="radio" aria-checked="false">数据</button>
+            <button class="pill" data-field="goal" data-value="admin" role="radio" aria-checked="false">后台</button>
+            <button class="pill" data-field="goal" data-value="site" role="radio" aria-checked="false">展示</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="cp-group">
+          <legend><span>03</span>大概多大</legend>
+          <div class="pills" role="radiogroup" aria-label="规模">
+            <button class="pill is-on" data-field="scale" data-value="s" role="radio" aria-checked="true">单点小事</button>
+            <button class="pill" data-field="scale" data-value="m" role="radio" aria-checked="false">多个模块</button>
+            <button class="pill" data-field="scale" data-value="l" role="radio" aria-checked="false">多人协作</button>
+          </div>
+        </fieldset>
+
+        <div class="cp-presets">
+          <p class="cp-presets-title">没想好？直接点一个常见需求</p>
+          <div class="preset-row">
+            <button class="preset" type="button" data-preset="phone,auto,m">手机多账号签到</button>
+            <button class="preset" type="button" data-preset="pc,data,m">表格自动日报</button>
+            <button class="preset" type="button" data-preset="web,admin,m">门店会员后台</button>
+          </div>
+        </div>
+
+        <div class="cp-faq">
+          <b>为什么这里不标价？</b>
+          <span>同样叫“后台”，三个页面和三张表是两个工作量。先对齐要做什么，价格才有意义；能砍的功能我会先帮你砍。</span>
+        </div>
+
+        <div class="cp-actions">
+          <button class="btn btn-primary btn-block" id="compileBtn" type="button">
+            <span class="btn-label">生成方案</span>
+            <span class="btn-load"><i></i><i></i><i></i></span>
+          </button>
+          <p class="cp-note">不报价、不催单。先看清要做什么，价格当面聊。</p>
+        </div>
+      </div>
+
+      <div class="cp-output" aria-live="polite">
+        <div class="cp-bar">
+          <span class="cp-bar-title"><i></i>plan.md</span>
+          <span class="cp-bar-state" id="cpState">READY</span>
+        </div>
+        <div class="cp-body" id="cpBody">
+          <div class="cp-placeholder">
+            <p class="cp-ph-title">选择左边的选项</p>
+            <p class="cp-ph-sub">这里会实时生成一份方案草稿：建议模块、交付物、大概周期、你需要准备的东西。</p>
+          </div>
+        </div>
+        <div class="cp-foot">
+          <button class="btn btn-ghost btn-sm" id="copyPlan" type="button" disabled>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M15 5.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            复制方案
+          </button>
+          <button class="btn btn-soft btn-sm" type="button" data-qr="wechat">把这个发给小林 →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONSOLE DEMO ============ -->
+<section class="section" id="demo">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow reveal"><span class="idx">03</span>互动 · 自动化工坊</p>
+      <h2 class="reveal" style="--d:.05s">敲一行命令，<span class="grad-2">看看机器怎么干活</span>。</h2>
+      <p class="sec-lead reveal" style="--d:.1s">这是个可以玩的模拟终端。输入 <code>help</code> 看看有哪些命令，或者直接点下面的场景。</p>
+    </header>
+
+    <div class="console reveal" id="console">
+      <div class="cons-head">
+        <span class="dots"><i></i><i></i><i></i></span>
+        <span class="cons-title">xiaolin-lab — bash</span>
+        <span class="cons-badge">SANDBOX</span>
+      </div>
+      <div class="cons-screen" id="consScreen" tabindex="0" role="log" aria-label="模拟终端输出"></div>
+      <form class="cons-input" id="consForm" autocomplete="off">
+        <label class="cons-prompt" for="consCmd">$</label>
+        <input id="consCmd" name="cmd" type="text" placeholder="输入 help 回车，或点下面的场景" spellcheck="false" autocomplete="off" aria-label="命令输入">
+        <button class="cons-send" type="submit" aria-label="执行命令">↵</button>
+      </form>
+      <div class="cons-chips">
+        <button type="button" data-cmd="help">help</button>
+        <button type="button" data-cmd="demo 签到">demo 签到</button>
+        <button type="button" data-cmd="demo 报表">demo 报表</button>
+        <button type="button" data-cmd="demo 重命名">demo 重命名</button>
+        <button type="button" data-cmd="price">price</button>
+        <button type="button" data-cmd="contact">contact</button>
+        <button type="button" data-cmd="clear">clear</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section class="section section-alt" id="work">
+  <div class="wrap">
+    <header class="sec-head sec-head-row">
+      <div>
+        <p class="eyebrow reveal"><span class="idx">04</span>做过 &amp; 能做</p>
+        <h2 class="reveal" style="--d:.05s">一些<span class="grad">交付形态</span>。</h2>
+      </div>
+      <p class="sec-lead reveal" style="--d:.1s;max-width:420px">客户的东西不方便全部公开，这里放的是形态和思路。想看具体某个项目的录屏，微信上发你。</p>
+    </header>
+
+    <div class="filters reveal" role="tablist" aria-label="案例筛选">
+      <button class="filter is-on" data-filter="all" role="tab" aria-selected="true">全部</button>
+      <button class="filter" data-filter="auto" role="tab" aria-selected="false">自动化</button>
+      <button class="filter" data-filter="full" role="tab" aria-selected="false">前后端</button>
+      <button class="filter" data-filter="admin" role="tab" aria-selected="false">后台</button>
+      <button class="filter" data-filter="app" role="tab" aria-selected="false">App</button>
+    </div>
+
+    <div class="work-grid" id="workGrid">
+      <article class="work-card reveal" data-cat="app">
+        <div class="wc-visual v-app">
+          <div class="phone"><span class="ph-notch"></span><div class="ph-row"></div><div class="ph-row short"></div><div class="ph-grid"><i></i><i></i><i></i><i></i></div></div>
+          <span class="wc-badge">已真机验证</span>
+        </div>
+        <div class="wc-body">
+          <div class="wc-meta"><span>App</span><span>2026</span></div>
+          <h3>课格 CourseGrid · 课程表 App</h3>
+          <p>安卓原生（Kotlin + Compose）。课程格子、周次切换、上课提醒端到端打通，打包签名后在真机上跑过。</p>
+          <ul class="wc-list"><li>本地数据 + 提醒</li><li>Material 3 界面</li><li>APK 直接安装</li></ul>
+        </div>
+      </article>
+
+      <article class="work-card reveal" data-cat="auto" style="--d:.05s">
+        <div class="wc-visual v-auto">
+          <div class="auto-rows"><span>订单_001.xlsx</span><span>订单_002.xlsx</span><span>订单_003.xlsx</span><span>… 1,284 条</span></div>
+          <div class="auto-arrow">→</div>
+          <div class="auto-out"><b>日报.xlsx</b><em>清洗 · 去重 · 汇总</em></div>
+        </div>
+        <div class="wc-body">
+          <div class="wc-meta"><span>自动化</span><span>典型需求</span></div>
+          <h3>订单 / 报表批量处理</h3>
+          <p>把散在各处的表格收拢、清洗、去重、按规则汇总，每天早上自动生成一份能直接发群里的报表。</p>
+          <ul class="wc-list"><li>失败重试</li><li>异常提示</li><li>定时执行</li></ul>
+        </div>
+      </article>
+
+      <article class="work-card reveal" data-cat="admin" style="--d:.1s">
+        <div class="wc-visual v-admin">
+          <div class="adm"><div class="adm-side"><i></i><i></i><i></i><i></i></div><div class="adm-main"><div class="adm-kpis"><b></b><b></b><b></b></div><div class="adm-chart"><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div>
+        </div>
+        <div class="wc-body">
+          <div class="wc-meta"><span>后台</span><span>典型需求</span></div>
+          <h3>门店会员管理后台</h3>
+          <p>会员档案、储值流水、消费记录、到期提醒。老板看数据，店员只管点，权限分开，操作留痕。</p>
+          <ul class="wc-list"><li>角色权限</li><li>流水对账</li><li>导出 Excel</li></ul>
+        </div>
+      </article>
+
+      <article class="work-card reveal" data-cat="auto" style="--d:.15s">
+        <div class="wc-visual v-phone">
+          <div class="tasks"><span class="t-done">签到 · 12 个账号</span><span class="t-done">领积分 · 完成</span><span class="t-run">同步数据 …</span><span class="t-wait">下一个任务</span></div>
+        </div>
+        <div class="wc-body">
+          <div class="wc-meta"><span>自动化</span><span>典型需求</span></div>
+          <h3>手机端日常任务</h3>
+          <p>签到、领券、采集、消息同步这类重复动作，交给手机自己跑。断网、弹窗、验证码都有兜底。</p>
+          <ul class="wc-list"><li>多账号</li><li>模拟人工节奏</li><li>结果通知</li></ul>
+        </div>
+      </article>
+
+      <article class="work-card reveal" data-cat="full" style="--d:.2s">
+        <div class="wc-visual v-web">
+          <div class="browser"><span class="br-bar"><i></i><i></i><i></i></span><div class="br-hero"></div><div class="br-cols"><i></i><i></i><i></i></div></div>
+        </div>
+        <div class="wc-body">
+          <div class="wc-meta"><span>前后端</span><span>典型需求</span></div>
+          <h3>品牌落地页 + 表单收集</h3>
+          <p>一个能讲清楚业务的页面：动效克制、手机上不塌、表单直接进后台，不用再靠微信收截图。</p>
+          <ul class="wc-list"><li>响应式</li><li>表单入库</li><li>访问统计</li></ul>
+        </div>
+      </article>
+
+      <article class="work-card reveal" data-cat="full" style="--d:.25s">
+        <div class="wc-visual v-data">
+          <div class="bars"><i style="--h:38%"></i><i style="--h:62%"></i><i style="--h:47%"></i><i style="--h:82%"></i><i style="--h:66%"></i><i style="--h:94%"></i><i style="--h:71%"></i></div>
+          <span class="wc-badge">实时刷新</span>
+        </div>
+        <div class="wc-body">
+          <div class="wc-meta"><span>前后端</span><span>典型需求</span></div>
+          <h3>数据看板</h3>
+          <p>把散在 Excel、微信、各个后台里的数字，汇到一块屏上，按天/周/月看趋势，点一下能下钻。</p>
+          <ul class="wc-list"><li>自动汇总</li><li>趋势对比</li><li>导出与分享</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section class="section" id="why">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="why-left">
+        <p class="eyebrow reveal"><span class="idx">05</span>为什么找小林</p>
+        <h2 class="reveal" style="--d:.05s">不转包，<br><span class="grad">不消失</span>。</h2>
+        <p class="sec-lead reveal" style="--d:.1s">接单的是我，写代码的是我，交付后回消息的也是我。中间没有销售、没有项目经理、没有“我帮你问一下技术”。</p>
+        <button class="btn btn-soft reveal" style="--d:.15s" type="button" data-qr="wechat">加个微信，先聊聊 →</button>
+      </div>
+      <ul class="why-list">
+        <li class="reveal"><span class="w-ico">◎</span><div><h3>一个人对接</h3><p>需求怎么说的，代码就怎么写。改起来快，不用等排期。</p></div></li>
+        <li class="reveal" style="--d:.05s"><span class="w-ico">▣</span><div><h3>先跑通，再交付</h3><p>核心流程先在你面前跑一遍，你点头了再补细节，不搞“最后一天才看到东西”。</p></div></li>
+        <li class="reveal" style="--d:.1s"><span class="w-ico">⌘</span><div><h3>代码真的给你</h3><p>源码、注释、部署说明一起交接。不是黑盒，也不绑死在我这。</p></div></li>
+        <li class="reveal" style="--d:.15s"><span class="w-ico">◈</span><div><h3>小需求也接</h3><p>一个脚本、一个页面、一个表格公式，都能聊。预算不多就先做最小可用版。</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section section-alt" id="process">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow reveal"><span class="idx">06</span>怎么合作</p>
+      <h2 class="reveal" style="--d:.05s">五步，<span class="grad-2">从一句话到能用</span>。</h2>
+      <p class="sec-lead reveal" style="--d:.1s">大部分需求，聊一次就能判断能不能做、大概多久。做不了我会直接说，不耽误你时间。</p>
+    </header>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="st-num">01</span>
+        <div class="st-dot"></div>
+        <h3>说需求</h3>
+        <p>微信上把想解决的问题讲清楚，越具体越好：现在怎么做的、一天花多久、哪里最烦。</p>
+        <span class="st-time"><span>10 分钟</span></span>
+      </li>
+      <li class="step reveal" style="--d:.06s">
+        <span class="st-num">02</span>
+        <div class="st-dot"></div>
+        <h3>拆方案</h3>
+        <p>我把它拆成功能清单，标出哪些必须有、哪些可以先不做，给你一个固定总价和排期。</p>
+        <span class="st-time"><span>当天</span></span>
+      </li>
+      <li class="step reveal" style="--d:.12s">
+        <span class="st-num">03</span>
+        <div class="st-dot"></div>
+        <h3>做原型</h3>
+        <p>先把核心流程跑通给你看。方向不对现在改最便宜，不用等到全部做完。</p>
+        <span class="st-time"><span>1–5 天</span></span>
+      </li>
+      <li class="step reveal" style="--d:.18s">
+        <span class="st-num">04</span>
+        <div class="st-dot"></div>
+        <h3>补细节</h3>
+        <p>界面、异常处理、权限、导出、提醒……把“能用”打磨成“顺手”。</p>
+        <span class="st-time"><span>3–15 天</span></span>
+      </li>
+      <li class="step reveal" style="--d:.24s">
+        <span class="st-num">05</span>
+        <div class="st-dot"></div>
+        <h3>交接</h3>
+        <p>源码、账号、部署方式、操作录屏一起给你，并留一段时间免费修 bug。</p>
+        <span class="st-time"><span>交付当天</span></span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="wrap faq-wrap">
+    <header class="sec-head">
+      <p class="eyebrow reveal"><span class="idx">07</span>你可能想问</p>
+      <h2 class="reveal" style="--d:.05s">先把<span class="grad">顾虑</span>说开。</h2>
+    </header>
+
+    <div class="faq-list" id="faqList">
+      <details class="faq-item reveal" open>
+        <summary><span>怎么收费？会不会很贵？</span><i></i></summary>
+        <div class="faq-a"><p>不按小时拖时间，也不标一个吓人的套餐价。先听你说需求，能砍的功能我帮你砍掉，剩下的给一个固定总价，写在清单里，做完不加价。</p><p class="faq-em">预算不多完全可以先做最小版本：能跑起来、能省时间，比一次做全更重要。</p></div>
+      </details>
+      <details class="faq-item reveal" style="--d:.04s">
+        <summary><span>我不懂技术，需求怎么提？</span><i></i></summary>
+        <div class="faq-a"><p>用你平时工作的说法就行：“每天要把三个表格合成一个”“客户加微信后要自动发一份资料”。我会翻译成功能清单再跟你确认，你只需要点头或者摇头。</p></div>
+      </details>
+      <details class="faq-item reveal" style="--d:.08s">
+        <summary><span>大概多久能做好？</span><i></i></summary>
+        <div class="faq-a"><p>单个脚本通常 1–3 天；带登录和数据库的网站/后台 1–2 周；App 2–4 周。具体看功能数量和你要不要改需求，排期会在开始前说清楚。</p></div>
+      </details>
+      <details class="faq-item reveal" style="--d:.12s">
+        <summary><span>做出来的东西，数据安全吗？</span><i></i></summary>
+        <div class="faq-a"><p>数据放你自己的账号里：自己的电脑、自己的服务器、自己的 Supabase 项目。密钥不进前端代码，交付时把账号和控制权一起交给你。我不留后门，也不拿你的数据做别的事。</p></div>
+      </details>
+      <details class="faq-item reveal" style="--d:.16s">
+        <summary><span>交付之后还能改吗？</span><i></i></summary>
+        <div class="faq-a"><p>交付后有一段时间免费修 bug（我这边的问题我负责）。后续想加功能、改样式，按次报价；长期要维护也可以按月谈，不绑死。</p></div>
+      </details>
+      <details class="faq-item reveal" style="--d:.2s">
+        <summary><span>你在哪？只能线上吗？</span><i></i></summary>
+        <div class="faq-a"><p>广东河源，线上沟通为主，微信、语音、远程演示都行。本地的话也可以约着当面把需求过一遍。</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="contact-panel reveal">
+      <div class="contact-glow" aria-hidden="true"></div>
+      <div class="contact-copy">
+        <p class="eyebrow"><span class="dot"></span>随时可以问，问价不收钱</p>
+        <h2>说说你想<br><span class="grad">自动化</span>的那件事。</h2>
+        <p class="contact-lead">哪怕只有一句“我每天都要手动做这个，好烦”，也够开始了。做不了我会直说，能做的我给你一个明确的时间和价格。</p>
+        <ul class="contact-points">
+          <li><i>1</i>把需求发我，当天给判断</li>
+          <li><i>2</i>先看方案，再决定做不做</li>
+          <li><i>3</i>不满意随时停，不套路</li>
+        </ul>
+      </div>
+
+      <div class="contact-cards">
+        <figure class="qr-card qr-wechat">
+          <button class="qr-open" type="button" data-qr="wechat" aria-label="放大微信二维码">
+            <img src="assets/img/qr-wechat-code.jpg" alt="零遇 的微信二维码" width="772" height="784" loading="lazy" decoding="async">
+            <span class="qr-zoom">点击放大</span>
+          </button>
+          <figcaption>
+            <span class="qr-label"><i class="wx"></i>微信 · 零遇</span>
+            <span class="qr-sub">扫码添加，备注「小林科技」</span>
+          </figcaption>
+        </figure>
+
+        <figure class="qr-card qr-douyin">
+          <button class="qr-open" type="button" data-qr="douyin" aria-label="放大抖音二维码">
+            <img src="assets/img/qr-douyin-card.jpg" alt="薄想 的抖音二维码" width="900" height="1170" loading="lazy" decoding="async">
+            <span class="qr-zoom">点击放大</span>
+          </button>
+          <figcaption>
+            <span class="qr-label"><i class="dy"></i>抖音 · 薄想</span>
+            <span class="qr-sub">抖音号 <b id="dyId">30786753040</b>
+              <button class="copy-mini" type="button" data-copy="30786753040">复制</button>
+            </span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap foot-inner">
+    <div class="foot-brand">
+      <span class="brand-mark">林</span>
+      <div><strong>小林科技</strong><em>把重复的活交给程序</em></div>
+    </div>
+    <nav class="foot-links" aria-label="页脚导航">
+      <a href="#services">能力</a><a href="#work">案例</a><a href="#faq">问题</a><a href="#top">回到顶部 ↑</a>
+    </nav>
+    <p class="foot-note">© <span id="year">2026</span> 小林科技 · 独立开发者 · 广东河源<br>
+      本站为静态页面，无追踪脚本；二维码仅用于添加联系方式。</p>
+  </div>
+</footer>
+
+<!-- FAB -->
+<button class="fab" id="fab" type="button" data-qr="wechat" aria-label="微信联系">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.2 4C5.2 4 2 6.6 2 9.8c0 1.8 1 3.4 2.6 4.5l-.6 2 2.2-1.1c.7.2 1.5.3 2.3.3h.6a5.6 5.6 0 0 1-.2-1.5c0-3.2 3.1-5.8 6.9-5.8h.5C16.7 5.6 13.3 4 9.2 4Zm-2.6 3.3a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8Zm5.2 0a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8Z"/><path d="M22 14.1c0-2.7-2.7-4.9-6-4.9s-6 2.2-6 4.9 2.7 4.9 6 4.9c.7 0 1.4-.1 2-.3l1.9.9-.5-1.7c1.6-.9 2.6-2.3 2.6-3.8Zm-8-1.3a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6Zm4 0a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6Z"/></svg>
+  <span>微信</span>
+</button>
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<!-- ============ QR MODAL ============ -->
+<div class="modal" id="qrModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="qrModalTitle" tabindex="-1">
+    <h2 id="qrModalTitle" class="sr-only">扫码添加联系方式</h2>
+    <button class="modal-x" type="button" data-close aria-label="关闭">✕</button>
+    <div class="modal-tabs" role="tablist" aria-label="选择二维码">
+      <button class="mtab is-on" type="button" data-pane="wechat" role="tab" aria-selected="true">微信 · 零遇</button>
+      <button class="mtab" type="button" data-pane="douyin" role="tab" aria-selected="false">抖音 · 薄想</button>
+    </div>
+    <div class="modal-pane is-on" data-pane-body="wechat">
+      <img src="assets/img/qr-wechat-code.jpg" alt="微信二维码，扫码添加零遇" width="772" height="784">
+      <h3 id="qrTitle">扫码加微信</h3>
+      <p>微信搜索「零遇」也可以 · 加好友备注 <b>小林科技</b>，通过快一点</p>
+    </div>
+    <div class="modal-pane" data-pane-body="douyin">
+      <img src="assets/img/qr-douyin-card.jpg" alt="抖音二维码，扫码关注薄想" width="900" height="1170">
+      <h3>抖音扫码关注</h3>
+      <p>抖音号 <b>30786753040</b> · 看过程、看翻车、看新东西</p>
+    </div>
+    <p class="modal-tip">长按图片可保存到相册 · 电脑上直接用手机扫屏幕</p>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>
