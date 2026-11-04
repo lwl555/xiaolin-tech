@@ -40,6 +40,7 @@
 
   /* ---------- 入场动画 ---------- */
   var introEl = $('#intro');
+  var hasHash = location.hash && location.hash.length > 1;
   function finishIntro() {
     if (document.documentElement.classList.contains('is-loaded')) return;
     document.documentElement.classList.add('is-loaded');
@@ -49,8 +50,9 @@
       setTimeout(function () { introEl.style.display = 'none'; }, 1150);
     }
   }
-  if (introEl && !reduceMotion) {
+  if (introEl && !reduceMotion && !hasHash) {
     document.documentElement.classList.add('intro-lock');
+    window.scrollTo(0, 0);
     var seenIntro = false;
     try { seenIntro = sessionStorage.getItem('xl-seen') === '1'; sessionStorage.setItem('xl-seen', '1'); } catch (e) {}
     if (seenIntro) document.documentElement.style.setProperty('--intro-delay', '.14s');
