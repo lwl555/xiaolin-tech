@@ -42,12 +42,19 @@
   var nav = $('#nav');
   var scrollBar = $('#scrollBar');
   var toTop = $('#toTop');
+  var fab = $('#fab');
   var hero = $('#top');
+  var lastY = 0;
 
   function onScroll() {
     var y = window.scrollY || window.pageYOffset;
     if (nav) nav.classList.toggle('is-stuck', y > 30);
     if (toTop) toTop.classList.toggle('show', y > 700);
+    if (fab) {
+      if (y > lastY + 8 && y > 280) fab.classList.add('is-hidden');
+      else if (y < lastY - 8 || y < 120) fab.classList.remove('is-hidden');
+    }
+    lastY = y;
     var h = document.documentElement.scrollHeight - window.innerHeight;
     if (scrollBar) scrollBar.style.width = (h > 0 ? Math.min(100, (y / h) * 100) : 0) + '%';
   }
@@ -753,11 +760,6 @@
   /* ---------- misc ---------- */
   var yearEl = $('#year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-
-  var fab = $('#fab');
-  if (fab && !finePointer) {
-    fab.addEventListener('click', function () { /* 由 data-qr 统一处理 */ });
-  }
 
   // 滚动兜底：终端与模拟器在接近视口时启动，避免快速滚动错过 IntersectionObserver
   window.addEventListener('scroll', function () {

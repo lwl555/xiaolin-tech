@@ -79,6 +79,7 @@ a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;cursor:pointer}
 ul,ol,dl{margin:0;padding:0;list-style:none}
 h1,h2,h3,h4,p,figure{margin:0}
+h1,h2,h3{text-wrap:balance}
 ::selection{background:rgba(139,123,255,.35);color:#fff}
 :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
 .skip-link{
@@ -172,9 +173,10 @@ h1,h2,h3,h4,p,figure{margin:0}
   background:var(--cyan);transform:translateX(-50%);
 }
 .nav-actions{display:flex;align-items:center;gap:9px}
-.theme-toggle .ico-sun{display:none}
-[data-theme="light"] .theme-toggle .ico-sun{display:block}
-[data-theme="light"] .theme-toggle .ico-moon{display:none}
+.theme-toggle .ico-sun{display:block}
+.theme-toggle .ico-moon{display:none}
+[data-theme="light"] .theme-toggle .ico-sun{display:none}
+[data-theme="light"] .theme-toggle .ico-moon{display:block}
 .menu-btn{display:none;flex-direction:column;gap:5px;width:40px}
 .menu-btn span{display:block;width:17px;height:1.6px;background:var(--ink);border-radius:2px;transition:.3s var(--ease)}
 .menu-btn[aria-expanded="true"] span:first-child{transform:translateY(3.3px) rotate(45deg)}
@@ -210,8 +212,10 @@ h1,h2,h3,h4,p,figure{margin:0}
 .b1{width:44vw;height:44vw;left:2%;top:2%;background:radial-gradient(circle,#0f6f8f,transparent 68%)}
 .b2{width:40vw;height:40vw;right:4%;top:8%;background:radial-gradient(circle,#42269c,transparent 68%);animation-delay:-7s}
 .b3{width:34vw;height:34vw;left:36%;top:52%;background:radial-gradient(circle,#7a2d63,transparent 70%);animation-delay:-13s}
-[data-theme="light"] .aurora{opacity:.34}
+[data-theme="light"] .aurora{opacity:.42}
 [data-theme="light"] .blob{mix-blend-mode:multiply}
+[data-theme="light"] .grid-bg{opacity:.38}
+[data-theme="light"] body::after{opacity:.022}
 @keyframes drift{
   0%,100%{transform:translate3d(0,0,0) scale(1)}
   33%{transform:translate3d(4%,-3%,0) scale(1.07)}
@@ -647,6 +651,7 @@ h1,h2,h3,h4,p,figure{margin:0}
 }
 .fab svg{width:19px;height:19px;color:#22c55e}
 .fab:hover{transform:translateY(-3px);border-color:rgba(74,222,128,.5)}
+.fab.is-hidden{opacity:0;transform:translateY(90px);pointer-events:none}
 .fab::before{content:"";position:absolute;inset:-4px;border-radius:inherit;border:1px solid rgba(74,222,128,.28);animation:fabPulse 3s ease-out infinite;pointer-events:none}
 @keyframes fabPulse{0%{opacity:.8;transform:scale(.96)}70%,100%{opacity:0;transform:scale(1.12)}}
 .to-top{
@@ -768,6 +773,90 @@ h1,h2,h3,h4,p,figure{margin:0}
   .cp-foot{flex-direction:column;align-items:stretch}
 }
 
+/* 浅色主题的层次：白卡片需要一点阴影才立得住 */
+[data-theme="light"] .svc-card{background:linear-gradient(165deg,#fff,#fcfcf8);box-shadow:0 12px 30px rgba(24,30,55,.05)}
+[data-theme="light"] .work-card{background:#fff;box-shadow:0 10px 26px rgba(24,30,55,.05)}
+[data-theme="light"] .compiler{box-shadow:0 24px 60px rgba(24,30,55,.10)}
+[data-theme="light"] .why-list li{background:#fff}
+[data-theme="light"] .contact-panel{box-shadow:0 24px 60px rgba(24,30,55,.08)}
+[data-theme="light"] .qr-card{box-shadow:0 14px 34px rgba(24,30,55,.12)}
+[data-theme="light"] .wc-visual{background:radial-gradient(120% 120% at 50% 0%,rgba(0,147,184,.08),transparent 60%),#f7f8f5}
+/* ---------- 17.5 手机端专项 ---------- */
+@supports (padding: env(safe-area-inset-bottom)){
+  .nav{padding-top:calc(16px + env(safe-area-inset-top))}
+  .nav.is-stuck{padding-top:calc(9px + env(safe-area-inset-top))}
+  .fab{bottom:calc(18px + env(safe-area-inset-bottom))}
+  .to-top{bottom:calc(78px + env(safe-area-inset-bottom))}
+  .toast{bottom:calc(88px + env(safe-area-inset-bottom))}
+  .mobile-menu{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
+  .modal{padding-bottom:calc(20px + env(safe-area-inset-bottom))}
+}
+@media (max-width:860px){
+  .icon-btn{width:42px;height:42px;border-radius:13px}
+  .sec-head-row{gap:18px}
+}
+@media (max-width:680px){
+  .section{padding:64px 0}
+  .sec-head{margin-bottom:30px}
+  .hero{padding-top:104px;padding-bottom:20px}
+  .hero h1{font-size:clamp(34px,10.5vw,48px);letter-spacing:-.032em}
+  .lead{font-size:14.5px;line-height:1.78;margin-top:18px}
+  .eyebrow{font-size:10px;padding:6px 12px;letter-spacing:.1em}
+  .hero-cta{flex-direction:column;align-items:stretch;gap:10px;margin-top:26px}
+  .hero-cta .btn{width:100%;padding:14px 20px}
+  .hero-stats{margin-top:30px;padding-top:18px}
+  .hero-stats dd{font-size:20px}
+  .hero-stats small{font-size:10px}
+  .hero-foot{margin-top:34px}
+  .service-grid{gap:12px}
+  .svc-card{padding:26px 22px 30px;border-radius:18px}
+  .svc-card h3{font-size:19px;margin-top:16px}
+  .svc-card p{font-size:13.5px}
+  .svc-arrow{display:none}
+  .svc-idx{top:22px;right:22px}
+  .cp-controls{padding:22px 20px}
+  .cp-group legend{margin-bottom:10px}
+  .pill{padding:9px 14px;font-size:13px}
+  .cp-presets{margin-top:22px;padding-top:16px}
+  .cp-faq{padding:12px 14px}
+  .cp-body{padding:20px 18px}
+  .cp-bar{padding:10px 14px}
+  .cp-foot{padding:12px 14px}
+  .plan h3{font-size:20px}
+  .plan-desc,.plan-sec li,.plan-meta dd{font-size:12.5px}
+  .cons-screen{height:300px}
+  .cons-chips,.filters{
+    flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    scroll-snap-type:x proximity;
+  }
+  .cons-chips::-webkit-scrollbar,.filters::-webkit-scrollbar{display:none}
+  .cons-chips button,.filter{flex:none;scroll-snap-align:start}
+  .filters{margin-inline:-17px;padding-inline:17px;padding-bottom:4px}
+  .wc-visual{height:170px}
+  .wc-body{padding:18px 18px 22px}
+  .wc-body h3{font-size:16px}
+  .why-list li{padding:17px 15px}
+  .step p{max-width:none}
+  .faq-item summary{font-size:15px;padding:19px 2px;gap:16px}
+  .faq-a{padding-bottom:20px;font-size:13.4px}
+  .contact-panel{padding:24px 20px;border-radius:22px;gap:26px}
+  .contact-copy h2{font-size:clamp(28px,8.4vw,38px)}
+  .contact-lead{font-size:13.5px}
+  .qr-open img{height:250px}
+  .fab{width:52px;height:52px;padding:0;justify-content:center;border-radius:50%}
+  .fab span{display:none}
+  .fab svg{width:23px;height:23px}
+  .modal{padding:14px}
+  .modal-card{padding:14px;border-radius:18px}
+  .modal-pane img{max-height:42vh}
+  .footer{padding-bottom:88px}
+}
+@media (max-width:380px){
+  .hero h1{font-size:clamp(31px,10vw,38px)}
+  .pills{gap:6px}
+  .pill{padding:8px 12px;font-size:12.5px}
+  .qr-open img{height:230px}
+}
 /* ---------- 18. Motion / print ---------- */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}

@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="dark">
+<html lang="zh-CN" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>页面走丢了 · 小林科技</title>
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#f6f5f1">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
-  :root{--cyan:#64e6ff;--violet:#8b7bff;--pink:#ff7ac6}
   *{box-sizing:border-box}
-  body{margin:0;min-height:100svh;display:grid;place-items:center;background:#05060a;color:#eef1fb;
+  body{margin:0;min-height:100svh;display:grid;place-items:center;background:#f6f5f1;color:#111421;
     font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;overflow:hidden}
   body::before{content:"";position:fixed;inset:-20%;background:
-    radial-gradient(40% 40% at 20% 20%,rgba(15,111,143,.5),transparent 70%),
-    radial-gradient(40% 40% at 80% 30%,rgba(66,38,156,.45),transparent 70%),
-    radial-gradient(35% 35% at 55% 85%,rgba(122,45,99,.4),transparent 70%);
+    radial-gradient(40% 40% at 20% 18%,rgba(0,166,204,.22),transparent 70%),
+    radial-gradient(40% 40% at 80% 26%,rgba(90,69,224,.20),transparent 70%),
+    radial-gradient(36% 36% at 55% 88%,rgba(214,58,149,.16),transparent 70%);
     filter:blur(60px);animation:drift 18s ease-in-out infinite}
   @keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(2%,-2%) scale(1.06)}}
   .card{position:relative;text-align:center;padding:48px 36px;max-width:520px}
-  .code{font-family:"Cascadia Code",Consolas,monospace;font-size:13px;letter-spacing:.3em;color:#7bf3ff}
+  .code{font-family:"Cascadia Code",Consolas,monospace;font-size:13px;letter-spacing:.3em;color:#0089b0}
   h1{font-size:clamp(38px,8vw,64px);line-height:1.1;letter-spacing:-.03em;margin:14px 0 12px}
-  h1 span{background:linear-gradient(100deg,#7bf3ff,#9d8bff 55%,#ff9fd4);-webkit-background-clip:text;background-clip:text;color:transparent}
-  p{color:#98a2bd;font-size:14px;line-height:1.8;margin:0 0 26px}
-  a{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;color:#05060a;
-    background:linear-gradient(120deg,#7bf3ff,#9d8bff 55%,#ff9fd4);font-weight:700;font-size:14px;text-decoration:none;
-    box-shadow:0 12px 34px rgba(123,243,255,.2)}
+  h1 span{background:linear-gradient(100deg,#0089b0,#5a45e0 55%,#c22b86);-webkit-background-clip:text;background-clip:text;color:transparent}
+  p{color:#59617a;font-size:14px;line-height:1.8;margin:0 0 26px}
+  a{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;color:#fff;
+    background:linear-gradient(120deg,#00a6cc,#5a45e0 60%,#d63a95);font-weight:700;font-size:14px;text-decoration:none;
+    box-shadow:0 12px 30px rgba(70,60,200,.22)}
   a:hover{transform:translateY(-2px)}
 </style>
 </head>
