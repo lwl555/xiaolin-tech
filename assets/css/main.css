@@ -29,6 +29,7 @@
   --ease:cubic-bezier(.22,.68,.24,1);
   --mono:"JetBrains Mono","Cascadia Code",Consolas,"SFMono-Regular",ui-monospace,monospace;
   --sans:"Segoe UI Variable Display","Segoe UI","PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",system-ui,sans-serif;
+  --serif:"Noto Serif SC","Source Han Serif SC","Songti SC","SimSun",serif;
   --r-lg:24px;
   --r-md:18px;
   --wrap:1180px;
@@ -94,6 +95,47 @@ h1,h2,h3{text-wrap:balance}
   background-size:180% 100%;animation:gradShift 9s ease-in-out infinite}
 .grad-2{background:var(--grad-2);-webkit-background-clip:text;background-clip:text;color:transparent}
 @keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+/* ---------- 2.5 入场动画 ---------- */
+.intro{
+  position:fixed;inset:0;z-index:600;background:var(--bg);
+  display:grid;place-items:center;will-change:transform;
+  transform:translateY(0);
+  transition:transform .85s cubic-bezier(.76,0,.24,1);
+}
+.intro.is-done{transform:translateY(-101%)}
+.intro-inner{display:flex;flex-direction:column;align-items:center;gap:18px;transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.intro.is-done .intro-inner{opacity:0;transform:translateY(-14px)}
+.intro-mark{
+  width:58px;height:58px;border-radius:16px;display:grid;place-items:center;
+  font-family:var(--serif);font-size:28px;font-weight:700;color:var(--cyan);
+  background:linear-gradient(150deg,rgba(100,230,255,.16),rgba(139,123,255,.10));
+  border:1px solid rgba(100,230,255,.28);
+  animation:introMark .7s var(--ease) both;
+}
+[data-theme="light"] .intro-mark{color:#00779a}
+.intro-word{
+  display:flex;flex-direction:column;align-items:center;gap:7px;
+  font-size:15px;font-weight:700;letter-spacing:.04em;
+  animation:introWord .7s var(--ease) .1s both;
+}
+.intro-word em{font-style:normal;font-family:var(--mono);font-size:8px;letter-spacing:.3em;color:var(--dim)}
+.intro-bar{width:168px;height:2px;background:var(--line);overflow:hidden;margin-top:4px;animation:introWord .6s var(--ease) .2s both}
+.intro-bar i{display:block;height:100%;width:100%;background:var(--ink);transform:scaleX(0);transform-origin:left;animation:introBar .65s cubic-bezier(.3,.9,.2,1) .1s forwards}
+@keyframes introMark{from{opacity:0;transform:translateY(10px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes introWord{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes introBar{to{transform:scaleX(1)}}
+html.intro-lock,html.intro-lock body{overflow:hidden}
+
+@keyframes heroIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes heroVisualIn{from{opacity:0;transform:translateY(34px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes navIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.js.is-loaded .hero .reveal{animation:heroIn .9s var(--ease) both;animation-delay:calc(var(--d,0s) + var(--intro-delay,.38s))}
+.js.is-loaded .hero .hero-visual{animation:heroVisualIn 1s var(--ease) both;animation-delay:calc(var(--intro-delay,.38s) + .08s)}
+.js.is-loaded .nav{animation:navIn .65s var(--ease) both;animation-delay:.34s}
+.js.is-loaded .marquee{animation:fadeIn .8s var(--ease) both;animation-delay:.7s}
+.js.is-loaded .hero-foot{animation-delay:calc(var(--intro-delay,.38s) + .16s)}
 
 /* ---------- 3. Buttons ---------- */
 .btn{
