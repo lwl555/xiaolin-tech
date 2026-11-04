@@ -72,10 +72,24 @@
   var fab = $('#fab');
   var hero = $('#top');
   var lastY = 0;
+  var navIdleTimer = null;
+  function showNav() { if (nav) nav.classList.remove('is-hidden'); }
 
   function onScroll() {
     var y = window.scrollY || window.pageYOffset;
-    if (nav) nav.classList.toggle('is-stuck', y > 30);
+    if (nav) {
+      nav.classList.toggle('is-stuck', y > 30);
+      var menuOpen = mobileMenu && mobileMenu.classList.contains('is-open');
+      var navFocused = nav.contains(document.activeElement) && document.activeElement !== document.body;
+      if (!reduceMotion && !menuOpen && !navFocused) {
+        if (y > lastY + 6 && y > 140) nav.classList.add('is-hidden');
+        else if (y < lastY - 4) showNav();
+      }
+      clearTimeout(navIdleTimer);
+      navIdleTimer = setTimeout(function () {
+        if ((window.scrollY || 0) > 20) showNav();
+      }, 900);
+    }
     if (toTop) toTop.classList.toggle('show', y > 700);
     if (fab) {
       if (y > lastY + 8 && y > 280) fab.classList.add('is-hidden');
@@ -102,6 +116,7 @@
     menuBtn.setAttribute('aria-expanded', String(open));
     menuBtn.setAttribute('aria-label', open ? '关闭菜单' : '打开菜单');
     document.body.style.overflow = open ? 'hidden' : '';
+    if (open) showNav();
   }
   if (menuBtn) menuBtn.addEventListener('click', function () {
     setMenu(!mobileMenu.classList.contains('is-open'));
