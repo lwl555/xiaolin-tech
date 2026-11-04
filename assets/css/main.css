@@ -903,7 +903,33 @@ html.intro-lock,html.intro-lock body{overflow:hidden}
   .pill{padding:8px 12px;font-size:12.5px}
   .qr-open img{height:230px}
 }
-/* ---------- 18. Motion / print ---------- */
+/* ---------- 19. 滚动性能（手机 / 触屏） ---------- */
+@media (max-width:860px), (hover:none){
+  body::after{display:none}
+  .aurora,.ring,.hero::after{display:none}
+  .hero{
+    background-image:
+      radial-gradient(90% 62% at 8% 0%,rgba(0,166,204,.10),transparent 70%),
+      radial-gradient(80% 55% at 100% 8%,rgba(90,69,224,.09),transparent 72%);
+  }
+  [data-theme="dark"] .hero{
+    background-image:
+      radial-gradient(90% 62% at 8% 0%,rgba(15,111,143,.35),transparent 70%),
+      radial-gradient(80% 55% at 100% 8%,rgba(66,38,156,.30),transparent 72%);
+  }
+  .grad{animation:none;background-size:100% 100%}
+  .nav,.nav.is-stuck,.fab,.btn-ghost,.eyebrow,.mobile-menu{
+    backdrop-filter:none;-webkit-backdrop-filter:none;
+  }
+  .mobile-menu{background:var(--bg)}
+  .fab::before{display:none}
+  .float-chip{display:none}
+  .contact-glow{display:none}
+  .svc-card,.work-card,.compiler,.contact-panel,.qr-card,.terminal-card{box-shadow:none!important}
+  .svc-card:hover,.work-card:hover,.qr-card:hover,.why-list li:hover{transform:none}
+}
+
+/* ---------- 20. Motion / print ---------- */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
   .js .reveal{opacity:1;transform:none}

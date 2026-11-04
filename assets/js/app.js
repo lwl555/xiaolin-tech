@@ -73,12 +73,25 @@
   var hero = $('#top');
   var lastY = 0;
   var navIdleTimer = null;
-  function showNav() { if (nav) nav.classList.remove('is-hidden'); }
+  var docHeight = 0;
+  var winHeight = 0;
+  var scrollTick = false;
 
-  function onScroll() {
+  function setClass(el, cls, on) {
+    if (!el) return;
+    if (on) { if (!el.classList.contains(cls)) el.classList.add(cls); }
+    else if (el.classList.contains(cls)) el.classList.remove(cls);
+  }
+  function showNav() { if (nav) nav.classList.remove('is-hidden'); }
+  function measureDoc() {
+    docHeight = document.documentElement.scrollHeight;
+    winHeight = window.innerHeight;
+  }
+
+  function updateScroll() {
     var y = window.scrollY || window.pageYOffset;
     if (nav) {
-      nav.classList.toggle('is-stuck', y > 30);
+      setClass(nav, 'is-stuck', y > 30);
       var menuOpen = mobileMenu && mobileMenu.classList.contains('is-open');
       var navFocused = nav.contains(document.activeElement) && document.activeElement !== document.body;
       if (!reduceMotion && !menuOpen && !navFocused) {
@@ -90,17 +103,26 @@
         if ((window.scrollY || 0) > 20) showNav();
       }, 900);
     }
-    if (toTop) toTop.classList.toggle('show', y > 700);
+    setClass(toTop, 'show', y > 700);
     if (fab) {
       if (y > lastY + 8 && y > 280) fab.classList.add('is-hidden');
       else if (y < lastY - 8 || y < 120) fab.classList.remove('is-hidden');
     }
     lastY = y;
-    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var h = docHeight - winHeight;
     if (scrollBar) scrollBar.style.width = (h > 0 ? Math.min(100, (y / h) * 100) : 0) + '%';
   }
+
+  function onScroll() {
+    if (scrollTick) return;
+    scrollTick = true;
+    requestAnimationFrame(function () { scrollTick = false; updateScroll(); });
+  }
+  measureDoc();
+  window.addEventListener('resize', measureDoc, { passive: true });
+  window.addEventListener('load', measureDoc);
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  updateScroll();
 
   if (toTop) toTop.addEventListener('click', function () {
     window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
@@ -165,12 +187,11 @@
     revealEls.forEach(function (el) { revObs.observe(el); });
     requestAnimationFrame(revealInView);
     window.addEventListener('load', revealInView);
-    // 滚动兜底：无头浏览器或低帧率设备上 IO 不一定回调
-    var revTick = false;
+    // 滚动兜底：无头浏览器或低帧率设备上 IO 不一定回调（停手后再补）
+    var revTimer = null;
     window.addEventListener('scroll', function () {
-      if (revTick) return;
-      revTick = true;
-      requestAnimationFrame(function () { revTick = false; revealInView(); });
+      clearTimeout(revTimer);
+      revTimer = setTimeout(revealInView, 140);
     }, { passive: true });
     setTimeout(revealInView, 2500);
   } else {
