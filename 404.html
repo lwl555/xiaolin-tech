@@ -5,34 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>页面走丢了 · 小林科技</title>
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#f4efe4">
+<meta name="theme-color" content="#f6f5f1">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
   *{box-sizing:border-box}
-  body{margin:0;min-height:100svh;display:grid;place-items:center;background:#f4efe4;color:#17130f;
-    font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;overflow:hidden}
-  body::before{content:"";position:fixed;inset:0;pointer-events:none;
-    background-image:radial-gradient(rgba(23,19,15,.05) 1px,transparent 1px);background-size:22px 22px;opacity:.5}
-  .card{position:relative;text-align:center;padding:48px 36px;max-width:560px}
-  .seal{display:inline-grid;place-items:center;width:54px;height:54px;background:#b7351f;color:#f4efe4;
-    font-family:"Noto Serif SC","Songti SC",SimSun,serif;font-size:28px;font-weight:700;margin-bottom:26px}
-  .code{font-family:Consolas,monospace;font-size:12px;letter-spacing:.32em;color:#6d655a}
-  h1{font-family:"Noto Serif SC","Songti SC",SimSun,serif;font-size:clamp(38px,8vw,62px);line-height:1.15;
-    letter-spacing:-.01em;margin:16px 0 14px;font-weight:700}
-  h1 span{color:#b7351f}
-  p{color:#57504a;font-size:14px;line-height:1.9;margin:0 0 28px}
-  a{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:2px;color:#fff;
-    background:#b7351f;font-weight:600;font-size:14px;text-decoration:none}
-  a:hover{background:#8f2a17}
-  .rule{width:56px;height:2px;background:#b7351f;margin:0 auto 26px}
+  body{margin:0;min-height:100svh;display:grid;place-items:center;background:#f6f5f1;color:#111421;
+    font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;overflow:hidden}
+  body::before{content:"";position:fixed;inset:-20%;background:
+    radial-gradient(40% 40% at 20% 18%,rgba(0,166,204,.22),transparent 70%),
+    radial-gradient(40% 40% at 80% 26%,rgba(90,69,224,.20),transparent 70%),
+    radial-gradient(36% 36% at 55% 88%,rgba(214,58,149,.16),transparent 70%);
+    filter:blur(60px);animation:drift 18s ease-in-out infinite}
+  @keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(2%,-2%) scale(1.06)}}
+  .card{position:relative;text-align:center;padding:48px 36px;max-width:520px}
+  .code{font-family:"Cascadia Code",Consolas,monospace;font-size:13px;letter-spacing:.3em;color:#0089b0}
+  h1{font-size:clamp(38px,8vw,64px);line-height:1.1;letter-spacing:-.03em;margin:14px 0 12px}
+  h1 span{background:linear-gradient(100deg,#0089b0,#5a45e0 55%,#c22b86);-webkit-background-clip:text;background-clip:text;color:transparent}
+  p{color:#59617a;font-size:14px;line-height:1.8;margin:0 0 26px}
+  a{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;color:#fff;
+    background:linear-gradient(120deg,#00a6cc,#5a45e0 60%,#d63a95);font-weight:700;font-size:14px;text-decoration:none;
+    box-shadow:0 12px 30px rgba(70,60,200,.22)}
+  a:hover{transform:translateY(-2px)}
 </style>
 </head>
 <body>
   <main class="card">
-    <div class="seal">林</div>
     <div class="code">404 / NOT FOUND</div>
     <h1>这一页<span>写丢了</span>。</h1>
-    <div class="rule"></div>
     <p>可能是链接写错了，也可能是这个页面还没做。<br>回首页看看能做什么，或者直接微信找小林。</p>
     <a href="./">← 回到小林科技</a>
   </main>
