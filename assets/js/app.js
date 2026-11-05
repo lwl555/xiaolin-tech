@@ -62,8 +62,8 @@
     try { seenIntro = sessionStorage.getItem('xl-seen') === '1'; sessionStorage.setItem('xl-seen', '1'); } catch (e) {}
     if (seenIntro) document.documentElement.style.setProperty('--intro-delay', '.14s');
     var startIntro = function () { setTimeout(finishIntro, seenIntro ? 180 : 520); };
-    if (document.readyState === 'complete') startIntro();
-    else window.addEventListener('load', startIntro, { once: true });
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', startIntro, { once: true });
+    else startIntro();
     setTimeout(finishIntro, 2800);
   } else {
     document.documentElement.classList.add('is-loaded');
