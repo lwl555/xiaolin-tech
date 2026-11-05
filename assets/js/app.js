@@ -30,11 +30,16 @@
     root.dataset.theme = t;
     try { localStorage.setItem('xl-theme', t); } catch (e) {}
     var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', t === 'light' ? '#f6f5f1' : '#05060a');
+    if (meta) meta.setAttribute('content', t === 'light' ? '#f4efe4' : '#12100d');
   }
   if (themeBtn) {
     themeBtn.addEventListener('click', function () {
-      applyTheme(root.dataset.theme === 'light' ? 'dark' : 'light');
+      var next = root.dataset.theme === 'light' ? 'dark' : 'light';
+      if (document.startViewTransition && !reduceMotion) {
+        document.startViewTransition(function () { applyTheme(next); });
+      } else {
+        applyTheme(next);
+      }
     });
   }
 
