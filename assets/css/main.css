@@ -99,10 +99,11 @@ h1,h2,h3{text-wrap:balance}
 /* ---------- 2.5 入场动画 ---------- */
 .intro{
   position:fixed;inset:0;z-index:600;background:var(--bg);
-  display:grid;place-items:center;will-change:transform;
+  display:none;place-items:center;will-change:transform;
   transform:translateY(0);
   transition:transform .85s cubic-bezier(.76,0,.24,1);
 }
+.js .intro{display:grid}
 .intro.is-done{transform:translateY(-101%)}
 .intro-inner{display:flex;flex-direction:column;align-items:center;gap:18px;transition:opacity .4s var(--ease),transform .4s var(--ease)}
 .intro.is-done .intro-inner{opacity:0;transform:translateY(-14px)}
@@ -1307,3 +1308,5 @@ h1,h2,h3,.brand-text,.hero h1,.sec-head h2,.why-left h2,.contact-copy h2,
 [data-theme="dark"] .terminal-card{box-shadow:8px 8px 0 rgba(0,0,0,.45)}
 .contact-panel .eyebrow .dot{background:#e2543a!important}
 [data-theme="light"] .intro-mark{color:#fdf8ee;background:var(--accent);border-color:var(--accent)}
+
+
