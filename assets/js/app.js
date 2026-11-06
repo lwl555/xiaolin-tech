@@ -129,8 +129,38 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   updateScroll();
 
+  /* 长距离平滑滚动时临时关掉最贵的合成效果，滚完恢复 */
+  var glidePoll = null;
+  var glideEndTimer = null;
+  function endGlide() {
+    clearInterval(glidePoll);
+    clearTimeout(glideEndTimer);
+    document.documentElement.classList.remove('is-gliding');
+  }
+  function startGlide() {
+    if (reduceMotion) return;
+    document.documentElement.classList.add('is-gliding');
+    clearInterval(glidePoll);
+    clearTimeout(glideEndTimer);
+    var last = -1;
+    var stable = 0;
+    glidePoll = setInterval(function () {
+      var y = window.scrollY || window.pageYOffset;
+      if (Math.abs(y - last) < 1) stable++; else stable = 0;
+      last = y;
+      if (stable >= 3) endGlide();
+    }, 90);
+    glideEndTimer = setTimeout(endGlide, 4000);
+  }
+  window.addEventListener('scrollend', function () {
+    if (document.documentElement.classList.contains('is-gliding')) endGlide();
+  }, { passive: true });
   if (toTop) toTop.addEventListener('click', function () {
+    startGlide();
     window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+  });
+  $$('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', startGlide);
   });
 
   /* mobile menu */
@@ -843,4 +873,5 @@
 
   window.__xlReady = true;
 })();
+
 

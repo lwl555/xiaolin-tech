@@ -955,3 +955,29 @@ html.intro-lock,html.intro-lock body{overflow:hidden}
   .nav,.fab,.to-top,.modal,.toast,.cursor-glow,.scroll-progress,.marquee,.aurora,.grid-bg{display:none!important}
   body{background:#fff;color:#000}
 }
+
+/* ---------- 22. 跳回顶部时的流畅模式 ---------- */
+html.is-gliding .nav,
+html.is-gliding .nav.is-stuck,
+html.is-gliding .fab{
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+}
+html.is-gliding body::after{display:none}
+html.is-gliding .blob,
+html.is-gliding .marquee-track,
+html.is-gliding .ring{animation-play-state:paused!important}
+html.is-gliding .terminal-card,
+html.is-gliding .console,
+html.is-gliding .svc-card,
+html.is-gliding .work-card{box-shadow:none!important}
+
+/* ---------- 23. 常驻性能：把持续重绘的装饰关掉 ---------- */
+.blob{animation:none;filter:blur(70px);mix-blend-mode:normal}
+[data-theme="light"] .blob{mix-blend-mode:normal}
+[data-theme="light"] .aurora{opacity:.55}
+.grad{animation:none}
+body::after{mix-blend-mode:normal}
+.nav.is-stuck{backdrop-filter:none;-webkit-backdrop-filter:none}
+.fab{backdrop-filter:none;-webkit-backdrop-filter:none}
+.eyebrow .dot{animation:none}
+.tc-live i{animation:none;opacity:1}
